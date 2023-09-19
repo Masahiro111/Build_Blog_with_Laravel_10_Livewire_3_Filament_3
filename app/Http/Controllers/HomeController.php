@@ -23,6 +23,7 @@ class HomeController extends Controller
             'latestPosts' => Post::query()
                 ->published()
                 ->latest('published_at')
+                ->take(9)
                 ->get(),
         ]);
     }
